@@ -44,7 +44,8 @@ def _assign_tier(confidence: float, vex_confidence: str) -> int:
     """
     Assign capital tier based on simulation confidence and Vex verdict.
     
-    Tier 1 (70-79%): $25
+    PAPER TRADING TIERS (lowered for testing):
+    Tier 1 (60-79%): $25
     Tier 2 (80-89%): $50
     Tier 3 (≥90% + Vex HIGH): $100
     
@@ -59,7 +60,7 @@ def _assign_tier(confidence: float, vex_confidence: str) -> int:
         return 3
     if confidence >= 0.80:
         return 2
-    return 1
+    return 1  # Now accepts 60-79% (down from 70%)
 
 
 # ------------------------------------------------------------------ #
@@ -94,12 +95,12 @@ def _validate_gates(
     gates = []
     failed_gates = []
     
-    # Gate 1: Confidence ≥70%
-    if sim_result.confidence < 0.70:
-        gates.append(f"❌ Gate 1: Confidence {sim_result.confidence:.0%} < 70%")
+    # Gate 1: Confidence ≥60% (PAPER TRADING MODE - lowered for testing)
+    if sim_result.confidence < 0.60:
+        gates.append(f"❌ Gate 1: Confidence {sim_result.confidence:.0%} < 60%")
         failed_gates.append("confidence_too_low")
     else:
-        gates.append(f"✅ Gate 1: Confidence {sim_result.confidence:.0%} ≥ 70%")
+        gates.append(f"✅ Gate 1: Confidence {sim_result.confidence:.0%} ≥ 60%")
     
     # Gate 2: Vex verdict
     if vex_verdict.verdict == "FAIL":
