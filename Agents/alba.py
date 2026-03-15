@@ -18,6 +18,18 @@ from typing import Optional, Tuple, List
 
 from models import CalendarEvent, Market, Position
 
+# Pipeline status tracker for dashboard
+try:
+    from utils.pipeline_status import update_status, log_message
+except ImportError:
+    sys.path.insert(0, str(Path(__file__).parent.parent))
+    try:
+        from utils.pipeline_status import update_status, log_message
+    except Exception:
+        # Fallback if dashboard not set up
+        def update_status(*args, **kwargs): pass
+        def log_message(*args, **kwargs): pass
+
 # Long-term Pinecone memory (non-fatal if unavailable)
 try:
     from pinecone_memory import memory as _mem
@@ -275,6 +287,8 @@ def scan_markets(today: str) -> Optional[Market]:
     Returns Market or None if nothing qualifies.
     """
     log.info("[Step 1] Alba scanning markets...")
+    update_status('alba-scan', 'Searching Polymarket and Kalshi for mispriced markets')
+    log_message('🔍 Alba: Starting market scan...')
 
     # Pull live market data from both Polymarket and Kalshi to give Claude real prices
     live_context_parts = []
@@ -355,6 +369,8 @@ def check_calendar(market: Market, today: str) -> Tuple[List[CalendarEvent], str
     Returns (events, verdict) where verdict is "CLEAR" or "FLAGGED".
     """
     log.info("[Step 2] Alba checking economic calendar...")
+    update_status('alba-calendar', f'Checking economic calendar for: {market.question[:50]}...')
+    log_message(f'📅 Alba: Checking calendar for {market.platform} market')
     user = (
         f"Today is {today}. Market resolves: {market.resolution_date}. "
         f"Market question: {market.question}\n\n"
@@ -389,6 +405,8 @@ def build_seed_file(market: Market, today: str) -> Path:
     Returns path to saved file.
     """
     log.info("[Step 3] Alba building seed file...")
+    update_status('alba-seed', 'Researching web sources and building seed file')
+    log_message(f'📚 Alba: Gathering 6-8 sources for {market.question[:40]}...')
     user = (
         f"Today is {today}. Market: {market.question}\n"
         f"Resolution: {market.resolution_date}\n"
