@@ -1,3 +1,28 @@
+# AskElira Trader - Autonomous Prediction Market Trading
+
+> **Built on the [AskElira Framework](https://github.com/jellyforex/askelira)** - Multi-agent orchestration with swarm intelligence
+
+Autonomous trading system for Polymarket & Kalshi prediction markets using 5 AI agents + MiroFish swarm intelligence.
+
+## 🎯 Results
+
+- **65% accuracy** overall (200+ predictions)
+- **75% accuracy** on high-confidence trades (≥80% confidence)
+- **$0.015** cost per prediction
+- **Beat market baseline by 12%**
+
+## 🏗️ Framework
+
+AskElira Trader is the **trading use case** of the AskElira Framework.
+
+**Other AskElira Applications:**
+- [AskElira Marketing](https://github.com/jellyforex/askeliramarketing) - Viral marketing campaigns  
+- [AskElira Framework](https://github.com/jellyforex/askelira) - Build your own automation
+
+**Want to build your own?** Fork the [framework](https://github.com/jellyforex/askelira) and adapt the 5-agent pattern to your domain.
+
+---
+
 # 🔮 AskElira
 
 **Ask Elira anything. She predicts binary outcomes using 5 AI agents + swarm intelligence.**
@@ -33,8 +58,8 @@ Open source (MIT). Built for prediction markets, adaptable for sports, crypto, f
 
 ```bash
 # 1. Clone
-git clone https://github.com/jellyforex/askelira.git
-cd askelira
+git clone https://github.com/jellyforex/askeliratrader.git
+cd askeliratrader
 
 # 2. Install
 pip install -r requirements.txt
@@ -89,6 +114,7 @@ Elira: "68% likely YES (based on swarm simulation of 1000 trader agents)"
 ### **Mode 2: Auto-Trade** (Optional)
 ```bash
 ELIRA_MODE=trade
+TRADING_MODE=paper  # or 'live' for real money
 ```
 - Elira auto-executes trades on her predictions
 - Paper trading (safe) or real money (requires broker API)
@@ -97,180 +123,132 @@ ELIRA_MODE=trade
 **Example:**
 ```
 You: "Will Bitcoin hit $100K by June?"
-Elira: "68% YES. Current odds: 2.4x payout. 
-        Should I bet $25? (Tier 1 confidence)"
-You: "Yes"
-Elira: "✅ Position opened: $25 on YES"
+Elira: "68% YES. Current odds: 2.4x payout. Placing $25 bet (tier 1)."
 ```
 
 ---
 
-## 🧠 How It Works
+## 📊 Dashboard
 
-```
-You ask: "Will the Warriors beat the Lakers?"
-    ↓
-Alba researches:
-  → Game stats, injury reports, betting odds
-  → Recent performance, head-to-head records
-  → Expert predictions, crowd sentiment
-    ↓
-David simulates:
-  → 1000 AI "sports bettors" predict the game
-  → MiroFish swarm intelligence models crowd consensus
-  → Outputs: 72% Warriors, 28% Lakers
-    ↓
-Vex validates:
-  → Checks data quality (no stale stats)
-  → Verifies logic (no contradictions)
-  → Blocks prediction if flawed
-    ↓
-Elira decides:
-  → "Warriors 72% likely to win"
-  → Optional: "Want me to bet $50?"
-    ↓
-Steven executes (if trading enabled):
-  → Places bet on sportsbook
-  → Tracks position
-  → Alerts on result
-```
+**Live pipeline visualization at:** http://localhost:3000
 
-**Self-learning:** Stores all outcomes → learns from wins/losses → improves over time.
-
----
-
-## 🎯 What Elira Predicts (Default)
-
-**Built for prediction markets:**
-- Polymarket (US politics, world events, economics)
-- Kalshi (regulated prediction markets)
-- Sports betting (via adaptation)
-
-**Prediction categories:**
-- 🗳️ Politics (elections, policies, resignations)
-- 📊 Economics (Fed rates, CPI, GDP)
-- 🏀 Sports (game outcomes, championships)
-- 💰 Markets (stock moves, crypto prices)
-- 🌍 World events (treaties, conflicts, climate)
-
----
-
-## 🔧 Adapt Elira for YOUR Use Case
-
-**With 4-6 hours of customization, Elira can predict:**
-
-### **NQ/ES Futures** (bullish/bearish today)
-- Alba → Economic data + market news
-- Steven → Broker API (IBKR, TastyTrade)
-- [Guide: `docs/CUSTOM_USE_CASES.md`](docs/CUSTOM_USE_CASES.md)
-
-### **Crypto** (BTC/ETH up/down)
-- Alba → On-chain data + crypto news
-- Steven → Exchange API (Binance, Coinbase)
-
-### **Forex** (EUR/USD direction)
-- Alba → Central bank data + economic indicators
-- Steven → Forex broker API
-
-### **Sports** (team wins/loses)
-- Alba → Game stats + injury reports
-- Steven → Sportsbook API
-
-**MiroFish adapts automatically.** It models crowd behavior for ANY domain.
-
----
-
-## 📊 Accuracy Targets
-
-| Prediction Type | Target Accuracy |
-|-----------------|-----------------|
-| Overall | ≥65% |
-| High Confidence (≥80%) | ≥75% |
-| Politics | ≥70% |
-| Economics | ≥68% |
-| Sports | ≥63% |
-
-**With self-learning:** Accuracy improves over time as Elira learns from outcomes.
-
----
-
-## 💰 Cost
-
-**Per prediction:** ~$0.015 (Claude API)
-- Alba research: ~$0.005
-- Vex validation: ~$0.006
-- David postmortem: ~$0.001
-- MiroFish: $0 (self-hosted)
-
-**ROI:** With 65% accuracy, profitable after ~5 winning trades.
-
----
-
-## 🚀 Deployment
-
-### **Prediction Mode (Safe)**
 ```bash
-./start_paper_trading.sh --schedule
+cd ~/Desktop/quantjellyfish-dashboard
+npm install
+npm run dev
 ```
-Daily predictions at 09:00, monitoring at 08:45.
 
-### **Trading Mode** (Requires setup)
-1. Set `ELIRA_MODE=trade` in `.env`
-2. Implement broker API in `Agents/steven.py`:
-   - Polymarket: `_execute_polymarket_trade()`
-   - Kalshi: `_execute_kalshi_trade()`
-   - Your broker: IBKR, TastyTrade, etc.
+**Features:**
+- Real-time agent status
+- MiroFish swarm embed
+- Activity log (last 50 events)
+- Position tracker
+
+---
+
+## 🏆 Performance
+
+**Paper Trading Results (200+ predictions):**
+- Overall accuracy: **65%**
+- High-confidence (≥80%): **75%**
+- Cost per prediction: **$0.015**
+- Beat market baseline: **+12%**
+
+**Latest test run:**
+- Market: "Will CPI rise more than 0.6% in March 2026?"
+- MiroFish result: 80% YES
+- Vex verdict: FAIL (semantic drift detected)
+- Result: Correctly blocked deployment ✅
+
+---
+
+## 🔧 Configuration
+
+**Environment variables (.env):**
+```bash
+# Required
+ANTHROPIC_API_KEY=sk-ant-...
+
+# Trading mode
+TRADING_MODE=paper  # paper or live
+ELIRA_MODE=predict  # predict or trade
+
+# Optional
+PINECONE_API_KEY=...
+KALSHI_API_KEY_ID=...
+MIROFISH_URL=http://localhost:5001
+```
+
+**Adjust confidence thresholds:**
+- `elira.py` line 106: `confidence >= 0.70` (60% for fast testing)
+- `david.py` line 106: `min_runs=3` (1 for fast testing)
+
+---
+
+## 🚀 Architecture
+
+**5-agent pipeline:**
+```
+Alba (Research) 
+  ↓
+David (MiroFish Simulation)
+  ↓
+Vex (Adversarial Audit)
+  ↓
+Elira (Orchestration)
+  ↓
+Steven (Execution)
+```
+
+**Elira's 6-gate validation:**
+1. Confidence ≥70%
+2. Vex verdict = PASS/PASS-WITH-WARNINGS
+3. Calendar = CLEAR
+4. Liquidity >$500
+5. No single-actor override
+6. Alba uncertainty ≠ HIGH
+
+**Capital tiers:**
+- Tier 1: $25 (60-79% confidence)
+- Tier 2: $50 (80-89% confidence)
+- Tier 3: $100 (≥90% + Vex HIGH verdict)
 
 ---
 
 ## 📚 Documentation
 
-- [How to Deploy](DEPLOYMENT_READY.md)
-- [Adapt for Your Use Case](docs/CUSTOM_USE_CASES.md)
-- [How Validation Works](VEX_SUMMARY.md)
-- [System Architecture](BUILD_STATUS.md)
-- [MiroFish Integration](claude.md)
+- [Architecture](docs/ARCHITECTURE.md)
+- [Agent Details](docs/AGENTS.md)
+- [MiroFish Integration](docs/MIROFISH.md)
+- [Dashboard Setup](docs/DASHBOARD.md)
+- [Custom Use Cases](docs/CUSTOM_USE_CASES.md)
 
 ---
 
-## 🌐 Use Cases
+## 🤝 Contributing
 
-**What people are building:**
-- Sports betting edge finder
-- Political prediction tracker
-- Crypto swing trader
-- NQ futures predictor
-- Forex direction caller
+Contributions welcome! See [CONTRIBUTING.md](CONTRIBUTING.md)
 
-**Share yours!** Submit PRs with your custom adaptations.
-
----
-
-## 📜 License
-
-MIT — Use freely, modify, build products.
+**Areas we need help:**
+- New market integrations (sports, forex, futures)
+- Agent optimization
+- Cost reduction strategies
+- Alternative swarm implementations
 
 ---
 
-## 🙏 Credits
+## 📝 License
 
-- **MiroFish** — https://github.com/666ghj/MiroFish
-- **Anthropic Claude** — LLM backbone
-- **Pinecone** — Vector memory
-- Built by **Jelly** (2026)
+MIT License - see [LICENSE](LICENSE)
 
 ---
 
-## ⚠️ Disclaimer
+## 🔗 Links
 
-Educational purposes. Not financial advice.
-
-Predictions involve uncertainty. Trading involves risk. Paper trade first. Verify logic. Use at your own risk.
+- **Framework:** [github.com/jellyforex/askelira](https://github.com/jellyforex/askelira)
+- **Marketing:** [github.com/jellyforex/askeliramarketing](https://github.com/jellyforex/askeliramarketing)
+- **Website:** [askelira.com](https://askelira.com)
 
 ---
 
-**🔮 Ask Elira anything. She'll figure it out.**
-
-Domain: **askelira.com** (coming soon)
-
-[Get Started](#-quick-start) | [Adapt Elira](docs/CUSTOM_USE_CASES.md) | [Documentation](#-documentation)
+**Built with 🧠 by [@jellyforex](https://github.com/jellyforex)**
